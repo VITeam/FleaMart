@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+<div class = "center">
+
+  <h1>Товари</h1>
+
+
+
+
+    <div class="row">
+      <% @listings.each do |listing| %>
+
+          <div class="col-md-3">
+          <%= image_tag listing.image_url(:medium) %>
+          <div class="caption">
+          <h3><%= listing.name %></h3>
+          <p><%= number_to_currency(listing.price) %></p>
+          <%= link_to 'Переглянути', listing, class:"btn btn-link" %>
+          <%= link_to 'Змінити', edit_listing_path(listing), class:"btn btn-link" %>
+          <%= link_to 'Видалити', listing, method: :delete, data: { confirm: 'Ви впевнені?' }, class:"btn btn-link" %>
+          </div>
+        </div>
+      <% end %>
+      </div>
+    </tbody>
+  </table>
+
+  <br>
+
+  <%= link_to 'Додати оголошення', new_listing_path, class:"btn btn-link" %>
+</div>
