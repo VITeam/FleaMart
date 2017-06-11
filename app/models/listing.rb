@@ -4,6 +4,7 @@ class Listing < ApplicationRecord
     validates_presence_of :image
     validates :name, :description, :price, :catid, presence: true
     validates :price, numericality: { greater_than: 0 }
+    validates :mob, length: { maximum: 10, too_long: "%{count} цифр має бути" } 
 
     belongs_to :user
     has_many :orders

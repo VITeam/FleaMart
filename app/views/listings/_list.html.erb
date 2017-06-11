@@ -1,11 +1,14 @@
 <div id="filterrific_results">
-    <table>
+    <div class="left">
+    <table class = "tableleft">
         <tr>
         <th><%= filterrific_sorting_link(@filterrific, :name) %></th>
         <th><%= filterrific_sorting_link(@filterrific, :price) %></th>
         <th><%= filterrific_sorting_link(@filterrific, :created_at) %></th>
         </tr>
     </table>
+</div>
+    
 
     <div class="center">
         <h1><%= t('products') %></h1>
@@ -16,7 +19,7 @@
         <div class="thumbnail">
         <%= link_to image_tag(listing.image_url(:thumb)), listing %>
         <div class="caption">
-            <div class="text"><h3><%= listing.name %></h3></div>
+            <div class="textMini"><h3><%= listing.name %></h3></div>
             <br/>
             <p><%= number_to_currency(listing.price) %></p>
             <p><%= t('sold by') %> <%= "#{listing.user.name}" %></p>

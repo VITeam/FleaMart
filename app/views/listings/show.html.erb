@@ -1,4 +1,4 @@
-<br/><br/><br/><br/>
+
 <div class="row">
   <div class="col-md-6"><%= image_tag @listing.image_url(:medium) %></div>
   <div class="col-md-6">
@@ -7,22 +7,30 @@
   <h5> <%=  number_to_currency(@listing.price) %> </h5>
   
   <br>
-    <div class="center">
-      <%= link_to t('buy it now'), new_listing_order_path(@listing), class: "btn btn-success" %>
+    
+      <%= link_to t('buy it now'), new_listing_order_path(@listing), class: "btn btn-success button", style: "font-size:20px" %>
       <br/>
-      <%= link_to "Start conversation", new_message_path, class: 'btn btn-lg btn-primary' %>
-    </div>
+      <br/>
+      <%= link_to t('start conversation'), new_message_path, class: "btn btn-primary button", style: "font-size:20px; color:#fff" %>
+      <br/>
+      <br/>
+      <%= link_to @listing.mob, "#",class: "btn btn-primary button", style: "font-size:20px" %>
+    <br />
+      
+    <br />
   </div>
 </div>
-<br />
+<hr class="line">
 <p> <%= @listing.description %> </p>
-<% @listing_attachments.each do |p| %>
+<hr class="line">
+<div class="center"><% @listing_attachments.each do |p| %>
   <%= image_tag p.photo_url %>
   <br />
   <% if current_user == @listing.user %>
   <%= link_to t('edit attachment'), edit_listing_attachment_path(p) %><br />
   <% end %>
 <% end %>
+</div>
 
 <% if current_user == @listing.user %>
 <%= link_to t('edit'), edit_listing_path(@listing), class:"btn btn-link" %> |

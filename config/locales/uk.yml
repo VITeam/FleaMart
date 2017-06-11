@@ -5,6 +5,7 @@ uk:
   created based olx: "Створено за мотивами OLX"
 
   image: "Зображення"
+  searchtext: "Введіть дані для пошуку"
   item: "Товар"
   price: "Вартість"
   customer: "Покупець"
@@ -60,3 +61,5 @@ uk:
   my conversations: "Мої діалоги"
   start conversation: "Написати автору"
 
+  mobile: "Номер телефону"
+  categori: "Категорія"

@@ -1,11 +1,76 @@
 body {
-background-color: #F5F5F1;
+background-color: #000;
 color: #333333;
 font-family: Arial, Helvetica, sans-serif;
 }
 
+.tableleft {
+    right: 0;
+    width: 21%;
+}
+
+.tablefull {
+    right: 0;
+    width: 100%;
+}
+
+.selectindex{
+    width: 100%;
+    height: 50px;
+    font-size: 20px;
+}
+
+select{
+    width: 100%;
+    height: 50px;
+    background-color: #fff;
+    font-size: 20px;
+}
+
+a:hover{
+    background-color: #fff
+}
+
+.left {
+    text-align: -webkit-right;
+}
+
+th {
+    width: 7%; 
+    text-align: center;
+}
+
+
+
+.textfield {
+  width: 100%;
+  margin: 0;
+}
+
+.container{
+  //background-color: #fff;
+      margin-top: 50px;
+}
+
+li:hover {
+    background-color: #1f6baa;
+}
+
+a.filterrific_current_sort_column:hover {
+    background-color: #fff;
+}
+
+a.filterrific_sort_column:hover {
+    background-color: #fff;
+}
+
+a:hover {
+    background-color: #fff;
+}
+
 .navbar-default {
-    background-color: #EFEFEB;
+    background-color: #999999;
+    border-color: #999;
 }
 
 .navbar-default .navbar-brand{
@@ -17,9 +82,9 @@ font-family: Arial, Helvetica, sans-serif;
 
 .navbar-default .navbar-naw > li  > a {
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 14px;
+    font-size: 20px;
     font-weight: bold;
-    color: #0192B5;
+    color: #206caa;
 }
 
 .center {
@@ -29,6 +94,8 @@ font-family: Arial, Helvetica, sans-serif;
 .col-md-3:nth-child(4n+1){
     clear: left;
 }
+
+
 
 .col-md-6 {
     h3{

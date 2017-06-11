@@ -15,15 +15,17 @@
 
   <div class="form-group">
     <%= form.label t('title') %>
-    <%= form.text_field :name, class:"form-control", placeholder:"введіть назву товару" %>
+    <%= form.text_field :name, class:"form-control textfield", placeholder:"введіть назву товару" %>
   </div>
 
+  <div class="form-group">
+   <%= form.label t('categori') %>
      <% a = Array({})
       Cat.all.each do |cat|
       a.push(["#{cat.name}", "#{cat.id}"])
       end %>
       <%= form.select :catid, options_for_select(a), :class => 'genForm_dropBox' %>
-      
+  </div>     
 
   <div class="form-group">
     <%= form.label t('description') %>
@@ -33,6 +35,11 @@
   <div class="form-group">
     <%= form.label t('price') %>
     <%= form.text_field :price, class:"form-control", placeholder:"введіть вартість товару" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label t('mobile') %>
+    <%= form.text_field :mob, class:"form-control", placeholder:"введіть номер телефону (10 цифр)" %>
   </div>
 
   <div class="form-group">

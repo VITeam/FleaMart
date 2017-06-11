@@ -15,22 +15,18 @@
         <% @listings.each do |listing| %>
         <tr>
         <td><%= image_tag listing.image.url(:thumb) %></td>
-        <td><%= listing.name %></td>
-        <td><%= listing.description %></td>
+        <td><div class="textMini"><%= listing.name %></div></td>
+        <td><div class="textMini"><%= listing.description %></div></td>
         <td><%= number_to_currency(listing.price) %></td>
         <td>
 
-        <div class="btn-group">
-        <button type="button" class="btn btn-success"><%= t('action') %></button>
-        <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <span class="caret"></span>
-            <span class="sr-only">Toggle Dropdown</span>
-        </button>
-        <ul class="dropdown-menu">
-            <li><%= link_to t('view'), listing, class: "btn btn-link" %></li>
-            <li><%= link_to t('edit'), edit_listing_path(listing), class: "btn btn-link" %></li>
-            <li><%= link_to t('destroy'), listing, method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-link" %></li>
-        </ul>
+        <div class="btn-group-vertical" role="group" >
+        
+        
+            <%= link_to t('view'), listing, class: "btn btn-info" %>
+            <%= link_to t('edit'), edit_listing_path(listing), class: "btn btn-warning" %>
+            <%= link_to t('destroy'), listing, method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger" %>
+        
         </div>
         </td>
     </tr>

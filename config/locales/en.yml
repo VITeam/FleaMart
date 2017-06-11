@@ -6,6 +6,7 @@ en:
 
   image: "Image"
   item: "Item"
+  searchtext: "Enter your search"
   price: "Price"
   customer: "Customer"
   seller: "Seller"
@@ -59,3 +60,6 @@ en:
   trash: "Trash"
   my conversations: "My conversations"
   start conversation: "Start conversation"
+
+  mobile: "Mobile number"
+  categori: "Category"

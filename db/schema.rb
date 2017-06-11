@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170610215831) do
+ActiveRecord::Schema.define(version: 20170611201426) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -65,6 +65,7 @@ ActiveRecord::Schema.define(version: 20170610215831) do
     t.string "image"
     t.integer "user_id"
     t.integer "catid"
+    t.string "mob"
   end
 
   create_table "mailboxer_conversation_opt_outs", force: :cascade do |t|
