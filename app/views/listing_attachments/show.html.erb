@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong><%= t('listing') %>:</strong>
+  <%= @listing_attachment.listing_id %>
+</p>
+
+<p>
+  <strong><%= t('photo') %>:</strong>
+  <%= @listing_attachment.photo %>
+</p>
+
+<%= link_to t('edit'), edit_listing_attachment_path(@listing_attachment) %> |
+<%= link_to t('back'), listing_attachments_path %>

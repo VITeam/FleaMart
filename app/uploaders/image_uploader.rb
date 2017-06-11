@@ -8,11 +8,11 @@ class ImageUploader < CarrierWave::Uploader::Base
    
    
   
- #if Rails.env.production? 
+ if Rails.env.production? 
     storage :dropbox
-  #else
-  #  storage :file
-  #end
+  else
+    storage :file
+  end
   # storage :app_folder
   # storage :fog
 
@@ -43,7 +43,7 @@ class ImageUploader < CarrierWave::Uploader::Base
      process resize_to_fit: [400, 400]
    end
    version :thumb do
-     process resize_to_fit: [200, 200]
+     process resize_to_fit: [235, 235]
    end
 
   # Add a white list of extensions which are allowed to be uploaded.

@@ -1,4 +1,4 @@
-<nav class="navbar navbar-default">
+<nav class="navbar navbar-default navbar-fixed-top">
     <div class="container-fluid">
       <!-- Brand and toggle get grouped for better mobile display -->
       <div class="navbar-header">
@@ -14,40 +14,36 @@
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
-          <li><a href="/pages/about">Про сайт<span class="sr-only">(current)</span></a></li>
-          <li><a href="/pages/contact">Контакти</a></li>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-            <ul class="dropdown-menu">
-              <li><a href="#">Action</a></li>
-              <li><a href="#">Another action</a></li>
-              <li><a href="#">Something else here</a></li>
-              <li role="separator" class="divider"></li>
-              <li><a href="#">Separated link</a></li>
-              <li role="separator" class="divider"></li>
-              <li><a href="#">One more separated link</a></li>
-            </ul>
-          </li>
+          <li><%= link_to t('about'), pages_about_path %></li>
+          <li><%= link_to t('contacts'), pages_contact_path %></li>
+          <% if I18n.locale == I18n.default_locale %>
+            <li><%= link_to "EN", { :locale=>'en' } %></li>
+          <% else %>
+            <li><%= link_to "UK", { :locale=>'uk' } %></li>
+          <%end%>
         </ul>
-        <form class="navbar-form navbar-left">
-          <div class="form-group">
-            <input type="text" class="form-control" placeholder="введіть назву">
-          </div>
-          <button type="submit" class="btn btn-default">Пошук</button>
-        </form>
+          
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="#">Link</a></li>
+        <% if user_signed_in? %> 
+          <li><%= link_to t('add listing'), new_listing_path %></li> 
+          <li><%= link_to t('manage listings'), seller_path %></li>
+           
           <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Мова <span class="caret"></span></a>
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><%= current_user.name %> <span class="caret"></span></a>
             <ul class="dropdown-menu">
-              <li><a href="#">Action</a></li>
-              <li><a href="#">Another action</a></li>
-              <li><a href="#">Something else here</a></li>
+              <li><%= link_to t('purchase history'), purchases_path %></li>
+              <li><%= link_to t('sales history'), sales_path %></li>
+              <li><%= link_to t('your conversations'), conversations_path %></li>
+              <li><%= link_to t('edit profile'), edit_user_registration_path %></li>
               <li role="separator" class="divider"></li>
-              <li><a href="#">Separated link</a></li>
+              <li><%= link_to t('sign out'), destroy_user_session_path, method: :delete %></li>
             </ul>
           </li>
+        <% else %>
+          <li><%= link_to t('sign up'), new_user_registration_path %></li>
+          <li><%= link_to t('sign in'), new_user_session_path %></li>
+        <% end %>
         </ul>
       </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
-  </nav>
+</nav>

@@ -1,0 +1,27 @@
+<%= form_with(model: listing_attachment,:html => { multipart: true }, local: true) do |form| %>
+  <% if listing_attachment.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(listing_attachment.errors.count, "error") %> prohibited this listing_attachment from being saved:</h2>
+
+      <ul>
+      <% listing_attachment.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :listing_id %>
+    <%= form.number_field :listing_id, id: :listing_attachment_listing_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :photo %>
+    <%= form.file_field :photo, id: :listing_attachment_photo %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

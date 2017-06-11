@@ -13,3 +13,28 @@
  *= require_tree .
  *= require_self
  */
+
+@import 'bootstrap';
+@import 'bootstrap/theme';
+@import 'chosen';
+@import 'listings';
+
+.messages {
+  max-height: 400px;
+  overflow-y: auto;
+  margin-bottom: 1em;
+  margin-top: 1em;
+}
+
+.text {
+    display: block;
+    display: -webkit-box;
+    max-width: 400px;
+    height: 50px;
+    margin: 0 auto;
+    line-height: 1.2;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

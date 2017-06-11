@@ -1,30 +1,46 @@
-<p id="notice"><%= notice %></p>
-<div class = "center">
-
-  <h1>Товари</h1>
-
-
-
-
-    <div class="row">
-      <% @listings.each do |listing| %>
-
-          <div class="col-md-3">
-          <%= image_tag listing.image_url(:medium) %>
-          <div class="caption">
-          <h3><%= listing.name %></h3>
-          <p><%= number_to_currency(listing.price) %></p>
-          <%= link_to 'Переглянути', listing, class:"btn btn-link" %>
-          <%= link_to 'Змінити', edit_listing_path(listing), class:"btn btn-link" %>
-          <%= link_to 'Видалити', listing, method: :delete, data: { confirm: 'Ви впевнені?' }, class:"btn btn-link" %>
-          </div>
-        </div>
-      <% end %>
-      </div>
-    </tbody>
-  </table>
-
-  <br>
-
-  <%= link_to 'Додати оголошення', new_listing_path, class:"btn btn-link" %>
+<div class="jumbotron">
+ <h1><%= t('handcrafted items from around the world') %></h1>
+ <br /><br />
+ <h2><%= t('find what you need') %></h2>
 </div>
+
+<div class = "center">
+  <%= form_for_filterrific @filterrific do |f| %>
+    <div><%= t('search') %>
+        <%= f.text_field(
+          :search_query,
+          class: 'filterrific-periodically-observed', 
+          placeholder: 'введіть назву'
+        ) %>
+    </div>
+
+  <div>
+      Country
+      <% 
+      a = Array({"All" => ""})
+      Cat.all.each do |cat|
+      a.push(["#{cat.name}", "#{cat.id}"])
+      end
+      %>
+      <%= f.select :with_catid, options_for_select(a), :class => 'genForm_dropBox' %>
+      
+    </div>
+
+    <div>
+        Sorted by
+    </div>
+    <div>
+        <%= link_to(
+          'Reset filters',
+          reset_filterrific_url,
+        ) %>
+    </div>
+    <%= render_filterrific_spinner %>
+  <% end %>
+</div>
+
+<%= render(
+  partial: 'listings/list',
+  locals: { listings: @listings }
+) %>
+

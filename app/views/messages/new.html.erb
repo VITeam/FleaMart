@@ -1,0 +1,27 @@
+<% page_header "Start Conversation" %>
+
+<%= form_tag messages_path, method: :post do %>
+  <div class="form-group">
+  <%
+  if request.headers["HTTP_REFERER"] != nil
+  test = request.headers["HTTP_REFERER"].split("/")
+  listing = Listing.find_by id: test[test.count-1]
+  user = User.find_by id: listing.user_id
+else 
+    error
+end
+  
+  %>
+    <h3><%= label_tag 'message[subject]', listing.name %>
+    -
+    <%= label_tag 'message[subject]', user.name %></h3>
+    <div style = "display: none;"><%= text_field_tag 'message[subject]', request.headers["HTTP_REFERER"], class: 'form-control', required: true %></div>
+  </div>
+
+  <div class="form-group">
+    <%= label_tag 'message[body]', 'Message' %>
+    <%= text_area_tag 'message[body]', nil, cols: 3, class: 'form-control', required: true %>
+  </div>
+
+  <%= submit_tag 'Send', class: 'btn btn-primary' %>
+<% end %>

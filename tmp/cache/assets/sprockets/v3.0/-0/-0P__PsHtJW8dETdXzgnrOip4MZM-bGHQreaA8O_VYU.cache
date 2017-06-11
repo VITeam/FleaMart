@@ -1,0 +1,36 @@
+I"ç(function() {
+  var change_to_icon;
+
+  $(document).on('ready page:load', function() {
+    $(document).on('focus', 'input.datepicker:not(.hasDatepicker)', function() {
+      var input;
+      input = $(this);
+      if (input[0].type === 'date') {
+        return;
+      }
+      console.log(input);
+      return input.datepicker("option", "dateFormat", "dd-mm-yy");
+    });
+    $('.datepicker:not(.hasDatepicker)').each(function() {
+      var p;
+      if ($(this).val().length > 0) {
+        p = $(this).val().split('-');
+        return $(this).val(p[2] + "-" + p[1] + "-" + p[0]);
+      }
+    });
+    change_to_icon('.view_link', 'eye');
+    change_to_icon('.delete_link', 'trash');
+    return change_to_icon('.edit_link', 'pencil');
+  });
+
+  change_to_icon = function(klass, icon_name) {
+    var buttons;
+    buttons = $(klass);
+    return $.each(buttons, function(_, button) {
+      button.text = '';
+      return $(button).addClass(klass + '_image fa fa-' + icon_name);
+    });
+  };
+
+}).call(this);
+:ET

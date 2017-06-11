@@ -1,5 +1,5 @@
-<h1>New Listing</h1>
+<h1><%= t('new listing') %></h1>
 
 <%= render 'form', listing: @listing %>
 
-<%= link_to 'Назад', listings_path, class:"btn btn-link" %>
+<%= link_to t('back'), listings_path, class:"btn btn-link" %>

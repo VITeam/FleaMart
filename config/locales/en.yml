@@ -1,33 +1,61 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# The following keys must be escaped otherwise they will not be retrieved by
-# the default I18n backend:
-#
-# true, false, on, off, yes, no
-#
-# Instead, surround them with single quotes.
-#
-# en:
-#   'true': 'foo'
-#
-# To learn more, please read the Rails Internationalization guide
-# available at http://guides.rubyonrails.org/i18n.html.
-
 en:
   hello: "Hello world"
+  contacts: "Contacts"
+  about: "About site"
+  created based olx: "Created based OLX"
+
+  image: "Image"
+  item: "Item"
+  price: "Price"
+  customer: "Customer"
+  seller: "Seller"
+  date sold: "Date sold"
+  your sales history: "Your sales history"
+  your purchase history: "Your purchase history"
+  new order: "New order"
+
+  back: "Back"
+
+  name: "Name"
+  title: "Title"
+  description: "Description"
+  action: "Action"
+  view: "View"
+  edit: "Edit"
+  destroy: "Destroy"
+  update: "Update"
+  new listing: "New listing"
+  editing listing: "Editing listing"
+  edit attachment: "Edit attachment"
+  buy it now: "Buy it now"
+  add listing: "Add listing"
+  products: "Products"
+  sold by: "Sold by"
+
+  handcrafted items from around the world: "Handcrafted items from around the world"
+  find what you need: "Find what you need"
+
+  listing: "Listing"
+  photo: "Photo"
+  search: "Search"
+  sign up: "Sign up"
+  sign in: "Sign in"
+  log in: "Log in"
+  manage listings: "Manage listings"
+  sales history: "Sales history"
+  purchase history: "Purchase history"
+  your conversations: "Your conversations"
+  edit profile: "Edit profile"
+  sign out: "Sign out"
+  seller account: "Seller account"
+  characters minimum: "characters minimum"
+  cancel my account: "Cancel my account"
+  we need your current password to confirm your changes: "we need your current password to confirm your changes"
+  forgot your password: "Forgot your password"
+  leave blank if you don`t want to change it: "leave blank if you don`t want to change it"
+
+  inbox: "Inbox"
+  sent: "Sent"
+  trash: "Trash"
+  my conversations: "My conversations"
+  start conversation: "Start conversation"

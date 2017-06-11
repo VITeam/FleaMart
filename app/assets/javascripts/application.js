@@ -14,3 +14,6 @@
 //= require jquery_ujs
 //= require rails-ujs
 //= require turbolinks
+//= require chosen-jquery
+//= require messages
+//= require filterrific/filterrific-jquery
