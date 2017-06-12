@@ -34,6 +34,7 @@ gem 'font-awesome-rails'
 group :production do
   gem 'pg'
   gem 'rails_12factor'
+  gem 'rails', '~> 5.1.0' 
 end 
 
 group :development, :test do
